@@ -6,30 +6,52 @@ function onChange(a, b, c) {
 }
 
 const contentStyle = {
-  height: '160px',
+  max: '160px',
   color: '#fff',
   lineHeight: '160px',
   textAlign: 'center',
   background: '#364d79',
 };
 
-const PositionCarouselDemo = () => {
+const myCarousel = [
+  {
+    id: 1,
+    uri: "./img1.jpg"
+  },
+  {
+    id: 2,
+    uri: "./img2.jpg"
+  },
+  {
+    id: 3,
+    uri: "./img3.jpg"
+  },
+  {
+    id: 4,
+    uri: "./img4.jpg"
+  },
+  {
+    id: 5,
+    uri: "./img5.jpg"
+  },
+  {
+    id: 6,
+    uri: "./img6.jpg"
+  }
+];
+
+const MelbCarousel = () => {
     return(
         <Carousel afterChange={onChange}>
-            <div>
-            <h3 style={contentStyle}>1</h3>
-            </div>
-            <div>
-            <h3 style={contentStyle}>2</h3>
-            </div>
-            <div>
-            <h3 style={contentStyle}>3</h3>
-            </div>
-            <div>
-            <h3 style={contentStyle}>4</h3>
-            </div>
+            {
+              myCarousel.map(img => (
+                <div key={img.id} style={contentStyle}>
+                  <img style={{height: '360px', width: '100%', objectFit: 'cover', objectPosition: '0px 30%'}} src={img.uri} alt="" />
+                </div>
+              ))
+            } 
         </Carousel>
     );
 };
 
-export default PositionCarouselDemo;
+export default MelbCarousel;

@@ -21,9 +21,9 @@ function App() {
         </Menu>
       </Header>
       <PositionCarouselDemo />
-      <Content className="site-layout" style={{ padding: '0 80px', marginTop: 64 }}>
+      <Content className="site-layout" style={{ padding: '0 300px', marginTop: 64 }}>
         <Typography>
-          <Title>Introduction</Title>
+          <Title style={{ textAlign: 'center' }}>Introduction</Title>
           <Paragraph>
             After massive project practice and summaries, <Text code>Ant Design</Text>, a design language for background
             applications, is refined by Ant UED Team, which aims to
