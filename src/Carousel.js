@@ -45,7 +45,7 @@ const MelbCarousel = () => {
         <Carousel afterChange={onChange}>
             {
               myCarousel.map(img => (
-                <div key={img.id} style={contentStyle}>
+                <div key={img.id}>
                   <img style={{height: '360px', width: '100%', objectFit: 'cover', objectPosition: '0px 30%'}} src={img.uri} alt="" />
                 </div>
               ))

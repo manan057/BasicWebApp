@@ -1,13 +1,12 @@
 import React from 'react';
-import 'antd/dist/antd.css';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import './App.css';
+import 'antd/dist/antd.css';
 import MelbCarousel from "./Carousel";
-import Home from "./Home";
-import AboutUs from "./AboutUs";
-import Team from "./Team";
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Team from "./pages/Team";
 
 const { Header, Content, Footer } = Layout;
 
@@ -38,7 +37,7 @@ function App() {
           <Route exact path="/about-us" component={AboutUs} />
           <Route exact path="/team" component={Team} />
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>Manan ©2021 Created via Ant UED</Footer>
       </Router>
     </Layout>
   );
