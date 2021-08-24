@@ -1,6 +1,6 @@
 import { Typography, Divider } from 'antd';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph } = Typography;
 
 function Team() {
     return (

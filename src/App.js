@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu } from 'antd';
 import './App.css';
-import { Typography, Divider } from 'antd';
 import MelbCarousel from "./Carousel";
 import Home from "./Home";
 import AboutUs from "./AboutUs";
 import Team from "./Team";
-import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 const { Header, Content, Footer } = Layout;
