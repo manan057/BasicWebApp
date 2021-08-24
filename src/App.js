@@ -4,38 +4,44 @@ import 'antd/dist/antd.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import './App.css';
 import { Typography, Divider } from 'antd';
-import PositionCarouselDemo from "./Carousel";
-const { Title, Paragraph, Text, Link } = Typography;
+import MelbCarousel from "./Carousel";
+import Home from "./Home";
+import AboutUs from "./AboutUs";
+import Team from "./Team";
+import { HashRouter as Router, Route, Switch, Link, withRouter } from 'react-router-dom';
+
 
 const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
     <Layout>
-      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
-        </Menu>
-      </Header>
-      <PositionCarouselDemo />
-      <Content className="site-layout" style={{ padding: '0 300px', marginTop: 64 }}>
-        <Typography>
-          <Title style={{ textAlign: 'center' }}>Introduction</Title>
-          <Paragraph>
-            After massive project practice and summaries, <Text code>Ant Design</Text>, a design language for background
-            applications, is refined by Ant UED Team, which aims to
-            <Text strong>
-              uniform the user interface specs for internal background projects, lower the unnecessary
-              cost of design differences and implementation and liberate the resources of design and
-              front-end development
-            </Text>.
-          </Paragraph>
-        </Typography>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      <Router>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1">
+              <span>Home</span>
+              <Link to="/" />
+            </Menu.Item>
+            <Menu.Item key="2">
+              <span>About Us</span>
+              <Link to="/about-us" />
+            </Menu.Item>
+            <Menu.Item key="3">
+              <span>Team</span>
+              <Link to="/team" />
+            </Menu.Item>
+          </Menu>
+        </Header>
+        <MelbCarousel />
+        <Content className="site-layout" style={{ padding: '0 300px', marginTop: 64 }}>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about-us" component={AboutUs} />
+          <Route exact path="/team" component={Team} />
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      </Router>
     </Layout>
   );
 }
